@@ -1,4 +1,4 @@
-/*ARIEL SEMPERTEGUI SOLIZ*/
+/*ARIEL SEMPERTEGUI*/
 package entrega05;
 
 import java.awt.EventQueue;
@@ -279,8 +279,12 @@ public class Entrega05 {
 					con.close();
 					
 					mostrarDatosTablaProducto();
-					
 					borrarInputs();
+					
+					btnAnyadirProducto.setEnabled(true);
+					btnActualizarProducto.setEnabled(false);
+					btnBorrarProducto.setEnabled(false);
+					btnCancelar.setEnabled(false);
 					
 				}catch(SQLException ex1) {
 					JOptionPane.showMessageDialog(ventana, ex1.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);

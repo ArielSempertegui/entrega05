@@ -1,4 +1,4 @@
-CREATE DATABASE  IF NOT EXISTS `tienda`;
+CREATE DATABASE  IF NOT EXISTS `tienda` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
 USE `tienda`;
 -- MySQL dump 10.13  Distrib 8.0.30, for Linux (x86_64)
 --
@@ -32,7 +32,7 @@ CREATE TABLE `producto` (
   `udstotal` int NOT NULL,
   `caducidad` datetime NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT;
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -41,7 +41,7 @@ CREATE TABLE `producto` (
 
 LOCK TABLES `producto` WRITE;
 /*!40000 ALTER TABLE `producto` DISABLE KEYS */;
-INSERT INTO `producto` VALUES (1,'Leche en cacao',12,6,18,'2025-05-30 00:00:00'),(3,'Coca Cola',34,99,133,'2027-01-02 00:00:00'),(5,'Agua',12,32,44,'2030-05-04 00:00:00'),(6,'Llanta neumática',1,4,5,'2026-02-03 00:00:00');
+INSERT INTO `producto` VALUES (1,'Leche en polvo',12,6,18,'2025-05-30 00:00:00'),(5,'Coca Cola',34,99,133,'2027-01-02 00:00:00'),(8,'Agua',12,34,46,'2030-05-04 00:00:00'),(9,'Llanta Neumática',1,4,5,'2026-03-01 00:00:00');
 /*!40000 ALTER TABLE `producto` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -54,4 +54,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2025-03-28  9:52:27
+-- Dump completed on 2025-03-28 10:19:30
