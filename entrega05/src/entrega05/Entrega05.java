@@ -294,6 +294,19 @@ public class Entrega05 {
 			}
 		});
 		
+		btnCancelar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				btnAnyadirProducto.setEnabled(true);
+				btnActualizarProducto.setEnabled(false);
+				btnBorrarProducto.setEnabled(false);
+				btnCancelar.setEnabled(false);
+				
+				borrarInputs();
+				
+			}
+		});
+		
 		tablaProducto.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
@@ -314,18 +327,6 @@ public class Entrega05 {
 			}
 		});
 		
-		btnCancelar.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				
-				btnAnyadirProducto.setEnabled(true);
-				btnActualizarProducto.setEnabled(false);
-				btnBorrarProducto.setEnabled(false);
-				btnCancelar.setEnabled(false);
-				
-				borrarInputs();
-				
-			}
-		});
 	}
 
 	
