@@ -190,6 +190,7 @@ public class Entrega05 {
 					JOptionPane.showMessageDialog(ventana, "Introduce fecha de caducidad", "Advertencia", JOptionPane.WARNING_MESSAGE);
 				} else {
 					
+					String descripcion = txtDescripcion.getText();
 					int udsVenta = Integer.parseInt(txtUdsVenta.getText());
 					int udsAlmacen = Integer.parseInt(txtUdsAlmacen.getText());
 					int udsTotal = udsVenta + udsAlmacen;
@@ -199,7 +200,7 @@ public class Entrega05 {
 						
 						Connection con = ConnectionSingleton.getConnection();
 						PreparedStatement pstmt = con.prepareStatement("insert into producto(descripcion, udsventa, udsalmacen, udstotal, caducidad) values(?,?,?,?,?)");
-						pstmt.setString(1, txtDescripcion.getText());
+						pstmt.setString(1, descripcion);
 						pstmt.setInt(2, udsVenta);
 						pstmt.setInt(3, udsAlmacen);
 						pstmt.setInt(4, udsTotal);
@@ -234,6 +235,8 @@ public class Entrega05 {
 					JOptionPane.showMessageDialog(ventana, "Introduce fecha de caducidad", "Advertencia", JOptionPane.WARNING_MESSAGE);
 				} else {
 					
+					int id = Integer.parseInt(lblId.getText());
+					String descripcion = txtDescripcion.getText();
 					int udsVenta = Integer.parseInt(txtUdsVenta.getText());
 					int udsAlmacen = Integer.parseInt(txtUdsAlmacen.getText());
 					int udsTotal = udsVenta + udsAlmacen;
@@ -243,12 +246,12 @@ public class Entrega05 {
 						
 						Connection con = ConnectionSingleton.getConnection();
 						PreparedStatement pstmt = con.prepareStatement("update producto set descripcion = ?, udsventa = ?, udsalmacen = ?, udstotal = ?, caducidad = ? where id = ?");
-						pstmt.setString(1, txtDescripcion.getText());
+						pstmt.setString(1, descripcion);
 						pstmt.setInt(2, udsVenta);
 						pstmt.setInt(3, udsAlmacen);
 						pstmt.setInt(4, udsTotal);
 						pstmt.setObject(5, fechaCaducidad);
-						pstmt.setInt(6, Integer.parseInt(lblId.getText()));
+						pstmt.setInt(6, id);
 						pstmt.executeUpdate();
 						pstmt.close();						
 						con.close();
