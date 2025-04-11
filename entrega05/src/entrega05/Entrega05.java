@@ -209,7 +209,6 @@ public class Entrega05 {
 						con.close();
 						
 						mostrarDatosTablaProducto();
-						
 						borrarInputs();
 
 						
@@ -255,7 +254,6 @@ public class Entrega05 {
 						con.close();
 						
 						mostrarDatosTablaProducto();
-						
 						borrarInputs();
 						
 					}catch(SQLException ex1) {
